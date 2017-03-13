@@ -1,0 +1,11 @@
+{
+ "checks": {
+    "check_pods_runtime": {
+      "command": "check-kube-pods-runtime.rb --in-cluster",
+      "subscribers": [],
+      "standalone": true,
+      "interval": 60,
+      "ttl": 600
+    }
+  }
+}

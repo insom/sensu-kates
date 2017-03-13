@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: uchiwa
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        service: uchiwa
+    spec:
+      containers:
+      - image: sstarcher/uchiwa
+        name: uchiwa
+        ports:
+        - containerPort: 3000
+        resources: {}
+        env:
+        - name: SENSU_HOSTNAME
+          value: api
+        - name: SENSU_DC_NAME
+          value: cloud1
+      restartPolicy: Always
+status: {}

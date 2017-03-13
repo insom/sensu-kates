@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: client
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        service: client
+    spec:
+      containers:
+      - args:
+        - client
+        env:
+        - name: CLIENT_NAME
+          value: shared-client
+        - name: CLIENT_ADDRESS
+          value: 127.0.0.1
+        image: gcr.io/insom-161401/test/sensu
+        name: client
+        resources: {}
+      restartPolicy: Always
+status: {}

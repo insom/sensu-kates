@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: api
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        service: api
+    spec:
+      containers:
+      - args:
+        - api
+        image: sstarcher/sensu
+        name: api
+        resources: {}
+      restartPolicy: Always
+status: {}
