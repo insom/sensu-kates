@@ -90,8 +90,8 @@ The easiest bet was to create a new Dockerfile that just imports the original, t
 ```
 FROM sstarcher/sensu
 
-ENV RUNTIME_INSTALL=sensu-plugins-kubernetes
-COPY kube.json /etc/sensu/check.d/
+ENV RUNTIME_INSTALL=kubernetes
+COPY kube.json /etc/sensu/conf.d/
 ```
 
 Build that Dockerfile and push it somewhere:
